@@ -625,6 +625,14 @@
           window.open("https://apps.apple.com/ru/app/id1634589900", "_blank");
         } catch {}
       };
+      window.addEventListener("orientationchange", function() {
+  console.log('orientationchange');
+  
+});
+
+window.addEventListener("resize", function() {
+  console.log('resize');
+});
     </script>
   </body>
 </html>
