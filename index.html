@@ -940,14 +940,44 @@
   </div>
 
   <script>
-    (function () { const n = document.createElement("link").relList; if (n && n.supports && n.supports("modulepreload")) return; for (const e of document.querySelectorAll('link[rel="modulepreload"]')) c(e); new MutationObserver(e => { for (const t of e) if (t.type === "childList") for (const o of t.addedNodes) o.tagName === "LINK" && o.rel === "modulepreload" && c(o) }).observe(document, { childList: !0, subtree: !0 }); function d(e) { const t = {}; return e.integrity && (t.integrity = e.integrity), e.referrerPolicy && (t.referrerPolicy = e.referrerPolicy), e.crossOrigin === "use-credentials" ? t.credentials = "include" : e.crossOrigin === "anonymous" ? t.credentials = "omit" : t.credentials = "same-origin", t } function c(e) { if (e.ep) return; e.ep = !0; const t = d(e); fetch(e.href, t) } })(); const i = document.querySelectorAll(".btn"), l = document.getElementById("spinner"), u = document.getElementById("winn"), a = document.querySelectorAll(".winnItem"), r = document.getElementById("lastBtn"), m = document.getElementById("fone_music"), f = document.getElementById("winnSound"), p = document.getElementById("spinnSound"); document.addEventListener("click", () => { m.play() }); i.forEach(s => { s.addEventListener("click", () => { p.play(), i.forEach(n => n.classList.add("hide")), l.classList.add("spin"), setTimeout(() => { f.play(), u.classList.add("active"), setTimeout(() => { a.forEach(n => n.classList.add("hide")), setTimeout(() => { r.classList.add("active") }, 300) }, 2e3) }, 6500) }) });
+   const btns = document.querySelectorAll(".btn");
+const spinner = document.getElementById("spinner");
+const winn = document.getElementById('winn')
+const winnItems = document.querySelectorAll('.winnItem');
+const lastBtn = document.getElementById('lastBtn');
+const foneMusic = document.getElementById('fone_music')
+const winnSound = document.getElementById('winnSound')
+const spinnSound = document.getElementById('spinnSound')
+document.addEventListener('click',()=>{
+  foneMusic.play()
+})
+btns.forEach(btn=>{
+  btn.addEventListener("click", () => {
+    spinnSound.play()
+ btns.forEach(btn=>btn.classList.add('hide'))
+    spinner.classList.add("spin");
+    setTimeout(() => {
+      winnSound.play()
+      winn.classList.add('active')
+      setTimeout(() => {
+        winnItems.forEach(item=>item.classList.add('hide'))
+        setTimeout(() => {
+          
+          lastBtn.classList.add('active')
+        }, 300);
+      }, 2000);
+    }, 6500);
+  });
 
-    r.onclick = () => {
-      mraid.open('https://apps.apple.com/ru/app/betboom-%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B8-%D0%BD%D0%B0-%D1%81%D0%BF%D0%BE%D1%80%D1%82/id1523280942');
-    };
+})
 
 
+lastBtn.addEventListener('click',()=>{
 
+    mraid.open('https://apps.apple.com/ru/app/betboom-%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B8-%D0%BD%D0%B0-%D1%81%D0%BF%D0%BE%D1%80%D1%82/id1523280942');
+
+  
+})
   </script>
 
 </body>
